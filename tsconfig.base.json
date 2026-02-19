@@ -1,0 +1,9 @@
+{
+  "extends": "@platformatic/tsconfig",
+  "compilerOptions": {
+    "lib": ["ESNext", "ESNext.Promise", "DOM"],
+    "declaration": true,
+    "outDir": "dist"
+  },
+  "include": ["src/*.ts", "src/**/*.ts"]
+}

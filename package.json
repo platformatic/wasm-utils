@@ -1,0 +1,58 @@
+{
+  "name": "@platformatic/wasm-utils",
+  "version": "0.0.1",
+  "description": "High-performance WebAssembly utilities for Node.js.",
+  "homepage": "https://github.com/platformatic/wasm-utils",
+  "author": "Platformatic Inc. <oss@platformatic.dev> (https://platformatic.dev)",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/platformatic/wasm-utils.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/platformatic/wasm-utils/issues"
+  },
+  "private": false,
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "type": "module",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.base.json",
+    "build:native": "cd native && docker compose up",
+    "postbuild": "node scripts/postbuild.ts && npm run build:native",
+    "lint": "eslint --cache",
+    "typecheck": "tsc -p . --noEmit",
+    "format": "prettier -w src test",
+    "test": "c8 -c test/config/c8-local.json node  --test --test-reporter=cleaner-spec-reporter --test-timeout=60000 'test/**/*.test.ts'",
+    "test:ci": "c8 -c test/config/c8-ci.json node  --test --test-reporter=cleaner-spec-reporter --test-timeout=60000 'test/**/*.test.ts'",
+    "ci": "npm run build && npm run lint && npm run test:ci",
+    "prepublishOnly": "npm run build && npm run lint",
+    "postpublish": "git push origin && git push origin -f --tags"
+  },
+  "dependencies": {
+    "dynbuffer": "^0.1.0"
+  },
+  "devDependencies": {
+    "@platformatic/tsconfig": "^0.2.0",
+    "@types/node": "^25.2.3",
+    "@types/semver": "^7.7.1",
+    "c8": "^10.1.3",
+    "cleaner-spec-reporter": "^1.0.3",
+    "eslint": "^9.39.0",
+    "eslint-plugin-prettier": "^5.5.5",
+    "neostandard": "^0.12.2",
+    "prettier": "^3.8.1",
+    "prettier-plugin-space-before-function-paren": "^0.0.10",
+    "semver": "^7.7.4",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">= 22.19.0"
+  }
+}
