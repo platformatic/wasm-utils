@@ -1,4 +1,4 @@
-import { DynamicBuffer } from 'dynbuffer'
+import { DynamicBuffer } from '@platformatic/dynamic-buffer'
 import { deepStrictEqual } from 'node:assert'
 import test from 'node:test'
 import { crc32c } from '../src/index.ts'

@@ -1,5 +1,4 @@
-// @ts-expect-error
-import { DynamicBuffer } from 'dynbuffer'
+import { DynamicBuffer } from '@platformatic/dynamic-buffer'
 import { readFileSync } from 'node:fs'
 
 interface WasmExports {
