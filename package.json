@@ -1,6 +1,6 @@
 {
   "name": "@platformatic/wasm-utils",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "High-performance WebAssembly utilities for Node.js.",
   "homepage": "https://github.com/platformatic/wasm-utils",
   "author": "Platformatic Inc. <oss@platformatic.dev> (https://platformatic.dev)",
