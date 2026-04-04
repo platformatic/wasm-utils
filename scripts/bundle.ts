@@ -1,6 +1,6 @@
 #!/usr/bin/env -S node
 
-import { readFile, writeFile } from 'node:fs/promises'
+import { cp, readFile, writeFile } from 'node:fs/promises'
 
 async function generateBundledVersion () {
   const unbundled = await readFile(new URL('../dist/index.js', import.meta.url), 'utf-8')
@@ -14,6 +14,7 @@ async function generateBundledVersion () {
     )
 
   await writeFile(new URL('../dist/bundled.js', import.meta.url), bundled, 'utf-8')
+  await cp(new URL('../dist/index.d.ts', import.meta.url), new URL('../dist/bundled.d.ts', import.meta.url))
 }
 
 await generateBundledVersion()
