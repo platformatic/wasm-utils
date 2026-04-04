@@ -20,12 +20,24 @@
     "README.md"
   ],
   "type": "module",
-  "exports": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./bundled": {
+      "import": "./dist/bundled.js",
+      "require": "./dist/bundled.js",
+      "types": "./dist/bundled.d.ts"
+    }
+  },
+  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.base.json",
     "build:native": "cd native && docker compose up",
-    "postbuild": "node scripts/postbuild.ts && npm run build:native",
+    "postbuild": "node scripts/postbuild.ts && npm run build:native && node scripts/bundle.ts",
     "lint": "eslint --cache",
     "typecheck": "tsc -p . --noEmit",
     "format": "prettier -w src test",
@@ -36,15 +48,15 @@
     "postpublish": "git push origin && git push origin -f --tags"
   },
   "dependencies": {
-    "@platformatic/dynamic-buffer": "^0.3.0"
+    "@platformatic/dynamic-buffer": "^0.3.1"
   },
   "devDependencies": {
     "@platformatic/tsconfig": "^0.2.0",
-    "@types/node": "^25.2.3",
+    "@types/node": "^25.5.2",
     "@types/semver": "^7.7.1",
     "c8": "^10.1.3",
     "cleaner-spec-reporter": "^1.0.3",
-    "eslint": "^9.39.0",
+    "eslint": "^9.39.4",
     "eslint-plugin-prettier": "^5.5.5",
     "neostandard": "^0.12.2",
     "prettier": "^3.8.1",
