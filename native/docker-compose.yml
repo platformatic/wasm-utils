@@ -1,6 +1,6 @@
 services:
   plt-wasm-utils-native-build:
-    image: rust:1.93-bookworm
+    image: rust:1.98-bookworm
     working_dir: /app
     volumes:
       - .:/app
