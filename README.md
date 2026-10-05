@@ -38,6 +38,14 @@ console.log(lz4Back.toString()) // test data for compression
 console.log(snappyBack.toString()) // test data for compression
 ```
 
+### Bundled version
+
+`@platformatic/wasm-utils/bundled` exports the same API with the WebAssembly module inlined, rather than read from disk
+next to the module. Use it with bundlers or single-file executables that don't ship `dist/native.wasm`.
+
+Bun resolves the main export to the bundled version on its own (through the `bun` export condition), so that
+`bun build --compile` executables work, including when this package is a transitive dependency.
+
 ## API
 
 ### `crc32c(data)`
