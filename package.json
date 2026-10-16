@@ -60,7 +60,7 @@
     "eslint-plugin-prettier": "^5.5.5",
     "neostandard": "^0.12.2",
     "prettier": "^3.8.1",
-    "prettier-plugin-space-before-function-paren": "^0.0.10",
+    "prettier-plugin-space-before-function-paren": "^0.1.0",
     "semver": "^7.7.4",
     "typescript": "^5.9.3"
   },
