@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@platformatic/dynamic-buffer':
-        specifier: ^0.4.0
-        version: 0.4.0
+        specifier: ^0.5.0
+        version: 0.5.0
     devDependencies:
       '@platformatic/tsconfig':
         specifier: ^0.2.0
@@ -157,8 +157,8 @@ packages:
     resolution: {integrity: sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
-  '@platformatic/dynamic-buffer@0.4.0':
-    resolution: {integrity: sha512-eCL++LyBjSsqalm4I67dl+gVqLSKd6gPYCieD72S5KqqAkmSAgAYNHt+lL+iVXssWPSfbuIJ5PEwpn5JVD73Xw==}
+  '@platformatic/dynamic-buffer@0.5.0':
+    resolution: {integrity: sha512-iUyF211Jr1WzpwWHp+M/Kh2UWCOpqhizRijIvQwvK/XXTbmtSw05NJH3q53RkHmTWLXfTE+M1IZ6ROlAI/CW+Q==}
     engines: {node: '>= 22.19.0'}
 
   '@platformatic/tsconfig@0.2.0':
@@ -1589,7 +1589,7 @@ snapshots:
 
   '@pkgr/core@0.2.9': {}
 
-  '@platformatic/dynamic-buffer@0.4.0': {}
+  '@platformatic/dynamic-buffer@0.5.0': {}
 
   '@platformatic/tsconfig@0.2.0':
     dependencies:
